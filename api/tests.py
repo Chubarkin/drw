@@ -1,7 +1,6 @@
 import json
 import time
 from datetime import datetime
-
 from django.http import Http404
 from django.test import TestCase
 from django.test.client import RequestFactory
@@ -17,7 +16,6 @@ class TestTasksApiView(TestCase):
                                         status=Task.COMPLETED,
                                         time_to_execute=0)
         self.task.start_time = datetime.fromtimestamp(time.time())
-
         self.factory = RequestFactory()
 
     def test_get(self):
